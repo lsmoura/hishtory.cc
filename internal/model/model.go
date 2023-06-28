@@ -2,6 +2,16 @@ package model
 
 import "time"
 
+type EncHistoryEntry struct {
+	EncryptedData []byte    `json:"enc_data"`
+	Nonce         []byte    `json:"nonce"`
+	DeviceID      string    `json:"device_id"`
+	UserID        string    `json:"user_id"`
+	Date          time.Time `json:"time"`
+	EncryptedID   string    `json:"id"`
+	ReadCount     int       `json:"read_count"`
+}
+
 type Device struct {
 	UserID   string `json:"user_id"`
 	DeviceID string `json:"device_id"`
